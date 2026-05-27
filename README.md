@@ -1,4 +1,5 @@
 # Art Gallery Hybrid Search Engine
+# Authors: Olufemi Davies-Davies, Rohan Burman
 
 This repository contains the codebase for **Assignment 2 (Information Retrieval ECS736P/U)**.  
 It implements a **hybrid search engine** for a curated corpus of Tate Gallery artworks, using:
