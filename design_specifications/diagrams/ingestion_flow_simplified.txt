@@ -1,0 +1,21 @@
+INGESTION FLOW (BATCH SCRIPT - SIMPLIFIED)
+
+LOCAL FILES (CSV + Images)
+        │
+        ▼
+LOAD & PRE-PROCESS (Normalize, Tokenize)
+        │
+        ▼
+ENRICH (Generate BERT Embeddings)
+        │
+        ▼
+BUILD INDICES (In-Memory)
+   │               │
+   ▼               ▼
+SPARSE (Dict)   VECTOR (NumPy)
+   │               │
+   └───────┬───────┘
+           ▼
+    SAVE TO DISK (.json, .npy)
+           ▼
+    RESTART SERVICE (Load new files)

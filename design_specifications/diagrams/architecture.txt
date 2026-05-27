@@ -1,0 +1,22 @@
+ARCHITECTURE
+
+CURATOR DASHBOARD (CONSOLE-UI)
+  │
+  ▼
+API GATEWAY (Internal Auth)
+  │
+  ▼
+SEARCH FRONTEND (Parse -> Expand Synonyms -> Orchestrate)
+  │                       │
+  │                       ├─────────► VECTOR RETRIEVAL (Exact k-NN) ─┐
+  │                       │                                          │
+  ├─────────► SPARSE RETRIEVAL (BM25F) ──────────────────────────────┤
+  │                                                                  ▼
+  │                                                           FUSION (Weighted Sum)
+  │                                                                  ▼
+  └──────────────────────────────────────────────► RULE-BASED RERANKING (optional)
+                                                                     ▼
+                                                          SNIPPETS + POST-FILTERING
+                                                                     ▼
+                                                                  RESPONSE
+
